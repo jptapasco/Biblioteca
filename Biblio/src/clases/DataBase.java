@@ -1,6 +1,8 @@
 package clases;
 
 import java.sql.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class DataBase {
     Connection conexion;
@@ -24,19 +26,37 @@ public class DataBase {
         }
     }
     
-    public boolean insertarLibro(String titulo, String autor, String descripcion, String genero, String cantidad_disponible, String valor_prestamo){
+    public boolean insertarLibro(String titulo, String autor, String descripcion, String genero, String cantidad_disponible, String valor_prestamo,String estado){
         boolean respuesta = false;
         
         try {
-            String consulta = "INSERT INTO libros (titulo, autor, descripcion, genero, cantidad_disponible, valor_prestamo, estado) VALUES ('"+titulo+"','"+autor+"','"+descripcion+"','"+genero+"','"+cantidad_disponible+"','"+valor_prestamo+"')";
+            String consulta = "INSERT INTO libros (titulo, autor, descripcion, genero, cantidad_disponible, valor_prestamo, estado) VALUES ('"+titulo+"','"+autor+"','"+descripcion+"','"+genero+"','"+cantidad_disponible+"','"+valor_prestamo+"','"+estado+"')";
             int resultado = this.manipularDB.executeUpdate(consulta);
             if (resultado==1) {
                 respuesta = true;
+                System.out.println("Ingresado con exito");
             }
         } catch (SQLException ex) {
             System.out.println("Error al insertar: "+ex.getMessage());
         }
         return respuesta;
+    }
+    
+    public boolean registrarUsuario(String cedula,String rol, String nombre,String apellido , String telefono, String direccion){
+        boolean validar = false;
+        try {    
+            String consulta_registrar = "INSERT INTO usuarios (cedula, rol, nombre, apellido, telefono, direccion)";
+            int resultado = this.manipularDB.executeUpdate(consulta_registrar);
+            
+            if (resultado == 1) {
+                validar = true;
+            }
+                        
+        } catch (SQLException ex) {
+            System.out.println("ERROR al insertar usuario: "+ex.getMessage());
+        }
+        
+        return validar;
     }
     
     public ResultSet listaLibros(){

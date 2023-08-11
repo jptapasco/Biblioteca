@@ -60,7 +60,7 @@
                                   </Group>
                                   <Component id="btn_salir" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <Component id="btn_registrar_user" pref="144" max="32767" attributes="0"/>
+                              <Component id="btn_registrar_usuarios" pref="144" max="32767" attributes="0"/>
                               <Component id="btn_lista_clientes" alignment="0" pref="0" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -91,7 +91,7 @@
                           <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
                           <Component id="etq_usuarios" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="btn_registrar_user" min="-2" max="-2" attributes="0"/>
+                          <Component id="btn_registrar_usuarios" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
                           <Component id="btn_lista_clientes" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
@@ -175,7 +175,7 @@
             <Property name="text" type="java.lang.String" value="USUARIOS:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="btn_registrar_user">
+        <Component class="javax.swing.JButton" name="btn_registrar_usuarios">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="cc" red="66" type="rgb"/>
@@ -186,7 +186,7 @@
             <Property name="text" type="java.lang.String" value="Registrar Usuario"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_registrar_userActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_registrar_usuariosActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JButton" name="btn_lista_clientes">

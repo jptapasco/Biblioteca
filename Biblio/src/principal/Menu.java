@@ -25,7 +25,7 @@ public class Menu extends javax.swing.JFrame {
         btn_registrar = new javax.swing.JButton();
         btn_listar = new javax.swing.JButton();
         etq_usuarios = new javax.swing.JLabel();
-        btn_registrar_user = new javax.swing.JButton();
+        btn_registrar_usuarios = new javax.swing.JButton();
         btn_lista_clientes = new javax.swing.JButton();
         panel_contenedor2 = new javax.swing.JPanel();
         btn_salir = new javax.swing.JButton();
@@ -70,12 +70,12 @@ public class Menu extends javax.swing.JFrame {
 
         etq_usuarios.setText("USUARIOS:");
 
-        btn_registrar_user.setBackground(new java.awt.Color(102, 204, 255));
-        btn_registrar_user.setForeground(new java.awt.Color(0, 0, 0));
-        btn_registrar_user.setText("Registrar Usuario");
-        btn_registrar_user.addActionListener(new java.awt.event.ActionListener() {
+        btn_registrar_usuarios.setBackground(new java.awt.Color(102, 204, 255));
+        btn_registrar_usuarios.setForeground(new java.awt.Color(0, 0, 0));
+        btn_registrar_usuarios.setText("Registrar Usuario");
+        btn_registrar_usuarios.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_registrar_userActionPerformed(evt);
+                btn_registrar_usuariosActionPerformed(evt);
             }
         });
 
@@ -130,7 +130,7 @@ public class Menu extends javax.swing.JFrame {
                                     .addComponent(btn_listar, javax.swing.GroupLayout.DEFAULT_SIZE, 144, Short.MAX_VALUE)
                                     .addComponent(buscador))
                                 .addComponent(btn_salir))
-                            .addComponent(btn_registrar_user, javax.swing.GroupLayout.DEFAULT_SIZE, 144, Short.MAX_VALUE)
+                            .addComponent(btn_registrar_usuarios, javax.swing.GroupLayout.DEFAULT_SIZE, 144, Short.MAX_VALUE)
                             .addComponent(btn_lista_clientes, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(panel_contenedor2, javax.swing.GroupLayout.DEFAULT_SIZE, 524, Short.MAX_VALUE)))
@@ -156,7 +156,7 @@ public class Menu extends javax.swing.JFrame {
                         .addGap(19, 19, 19)
                         .addComponent(etq_usuarios)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btn_registrar_user)
+                        .addComponent(btn_registrar_usuarios)
                         .addGap(18, 18, 18)
                         .addComponent(btn_lista_clientes)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -207,9 +207,9 @@ public class Menu extends javax.swing.JFrame {
         revalidate();
     }//GEN-LAST:event_btn_listarActionPerformed
 
-    private void btn_registrar_userActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_registrar_userActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btn_registrar_userActionPerformed
+    private void btn_registrar_usuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_registrar_usuariosActionPerformed
+        
+    }//GEN-LAST:event_btn_registrar_usuariosActionPerformed
 
     private void btn_lista_clientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_lista_clientesActionPerformed
         // TODO add your handling code here:
@@ -229,7 +229,7 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JButton btn_lista_clientes;
     private javax.swing.JButton btn_listar;
     private javax.swing.JButton btn_registrar;
-    private javax.swing.JButton btn_registrar_user;
+    private javax.swing.JButton btn_registrar_usuarios;
     private javax.swing.JButton btn_salir;
     private javax.swing.JTextField buscador;
     private javax.swing.JLabel etq_libros;
@@ -238,4 +238,5 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JPanel panel_contenedor;
     private javax.swing.JPanel panel_contenedor2;
     // End of variables declaration//GEN-END:variables
+
 }

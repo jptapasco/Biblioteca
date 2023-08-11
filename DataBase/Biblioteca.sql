@@ -2,45 +2,27 @@ CREATE DATABASE biblioteca;
 
 USE biblioteca;
 
-CREATE TABLE rol (
-    id_rol INT AUTO_INCREMENT PRIMARY KEY,
-    nombre VARCHAR(15) UNIQUE
-);
-
-INSERT INTO rol(nombre) VALUES (Bibliotecario,
-                                Cliente);
 
 CREATE TABLE usuarios (
     id_usuario INT AUTO_INCREMENT PRIMARY KEY,
-    rol INT,
+    cedula VARCHAR(10),
+    rol VARCHAR(10),
     nombre VARCHAR(30),
     apellido VARCHAR(30),
     telefono INT UNIQUE,
-    direccion VARCHAR(200),
-    FOREIGN KEY (rol) REFERENCES rol(id_rol)
+    direccion VARCHAR(200)  
 );
 
-CREATE TABLE generos (
-    id_genero INT AUTO_INCREMENT PRIMARY KEY,
-    nombre VARCHAR(30)
-);
-
-CREATE TABLE estado (
-    id_estado INT AUTO_INCREMENT PRIMARY KEY,
-    nombre VARCHAR(20)
-);
 
 CREATE TABLE libros (
     id_libro INT AUTO_INCREMENT PRIMARY KEY,
     titulo VARCHAR(200) UNIQUE,
     autor VARCHAR(200),
     descripcion VARCHAR(300),
-    genero INT,
+    genero VARCHAR(15),
     cantidad_disponible INT,
     valor_prestamo INT,
-    estado INT,
-    FOREIGN KEY (genero) REFERENCES generos(id_genero),
-    FOREIGN KEY (estado) REFERENCES estado(id_estado)
+    estado VARCHAR(20)
 );
 
 CREATE TABLE prestamo (
@@ -73,3 +55,5 @@ CREATE TABLE multas (
     estado INT,
     FOREIGN KEY (estado) REFERENCES estado_pago(id_estado_pago)
 );
+
+
