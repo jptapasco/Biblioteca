@@ -7,6 +7,9 @@ CREATE TABLE rol (
     nombre VARCHAR(15) UNIQUE
 );
 
+INSERT INTO rol(nombre) VALUES (Bibliotecario,
+                                Cliente);
+
 CREATE TABLE usuarios (
     id_usuario INT AUTO_INCREMENT PRIMARY KEY,
     rol INT,
@@ -54,6 +57,12 @@ CREATE TABLE prestamo (
 CREATE TABLE estado_pago (
     id_estado_pago INT AUTO_INCREMENT PRIMARY KEY,
     nombre VARCHAR(10)
+);
+
+CREATE TABLE devolucion (
+    id_devolucion INT AUTO_INCREMENT PRIMARY KEY,
+    usuario INT,
+    id_libro INT
 );
 
 CREATE TABLE multas (

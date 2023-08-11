@@ -11,7 +11,7 @@ public class DataBase {
         String puerto = "3306";
         String user_name = "root";
         String password = "";
-        String database_name = "libreria";
+        String database_name = "biblioteca";
         
         String url = "jdbc:mysql://"+hostname+":"+puerto+"/"+database_name;
             
@@ -24,11 +24,11 @@ public class DataBase {
         }
     }
     
-    public boolean insertarLibro(String titulo, String autor, String genero, String anio, String isbn){
+    public boolean insertarLibro(String titulo, String autor, String descripcion, String genero, String cantidad_disponible, String valor_prestamo){
         boolean respuesta = false;
         
         try {
-            String consulta = "INSERT INTO libros (titulo, autor, genero, anio_publicacion, isbn) VALUES ('"+titulo+"','"+autor+"','"+genero+"','"+anio+"','"+isbn+"')";
+            String consulta = "INSERT INTO libros (titulo, autor, descripcion, genero, cantidad_disponible, valor_prestamo, estado) VALUES ('"+titulo+"','"+autor+"','"+descripcion+"','"+genero+"','"+cantidad_disponible+"','"+valor_prestamo+"')";
             int resultado = this.manipularDB.executeUpdate(consulta);
             if (resultado==1) {
                 respuesta = true;

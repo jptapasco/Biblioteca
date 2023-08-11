@@ -92,22 +92,21 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="etq_autor_libro" min="-2" max="-2" attributes="0"/>
                           <Component id="etq_genero_libro" min="-2" max="-2" attributes="0"/>
-                          <Component id="campo_genero" min="-2" pref="270" max="-2" attributes="0"/>
-                          <Component id="etq_año_libro" min="-2" max="-2" attributes="0"/>
+                          <Component id="campo_descripcion" min="-2" pref="270" max="-2" attributes="0"/>
+                          <Component id="Genero" min="-2" max="-2" attributes="0"/>
                           <Component id="etq_titulo_libro" min="-2" max="-2" attributes="0"/>
                           <Group type="103" alignment="0" groupAlignment="1" attributes="0">
                               <Group type="103" alignment="1" groupAlignment="0" attributes="0">
                                   <Component id="etq_titulo_libro4" min="-2" max="-2" attributes="0"/>
-                                  <Component id="campo_isbn" min="-2" pref="270" max="-2" attributes="0"/>
-                                  <Component id="campo_anio" alignment="0" min="-2" pref="270" max="-2" attributes="0"/>
+                                  <Component id="campo_valor_prestamo" min="-2" pref="270" max="-2" attributes="0"/>
+                                  <Component id="campo_genero" alignment="0" min="-2" pref="270" max="-2" attributes="0"/>
+                                  <Component id="etq_titulo_libro5" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="campo_cantidad_disponible" alignment="0" min="-2" pref="270" max="-2" attributes="0"/>
                               </Group>
                               <Component id="campo_autor" alignment="1" min="-2" pref="270" max="-2" attributes="0"/>
+                              <Component id="btn_agregar_libro" alignment="1" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Component id="campo_titulo" alignment="0" min="-2" pref="270" max="-2" attributes="0"/>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="88" max="-2" attributes="0"/>
-                              <Component id="btn_agregar_libro" min="-2" max="-2" attributes="0"/>
-                          </Group>
                       </Group>
                       <EmptySpace min="-2" pref="90" max="-2" attributes="0"/>
                   </Group>
@@ -127,18 +126,22 @@
                       <EmptySpace min="-2" max="-2" attributes="0"/>
                       <Component id="etq_genero_libro" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="campo_genero" min="-2" max="-2" attributes="0"/>
+                      <Component id="campo_descripcion" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
-                      <Component id="etq_año_libro" min="-2" max="-2" attributes="0"/>
+                      <Component id="Genero" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="campo_anio" min="-2" max="-2" attributes="0"/>
+                      <Component id="campo_genero" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="etq_titulo_libro5" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="campo_cantidad_disponible" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="etq_titulo_libro4" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="campo_isbn" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
+                      <Component id="campo_valor_prestamo" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace pref="35" max="32767" attributes="0"/>
                       <Component id="btn_agregar_libro" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="150" max="32767" attributes="0"/>
+                      <EmptySpace min="-2" pref="87" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -186,6 +189,27 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="campo_autorActionPerformed"/>
               </Events>
             </Component>
+            <Component class="javax.swing.JTextField" name="campo_descripcion">
+              <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                </Property>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Segoe UI" size="14" style="0"/>
+                </Property>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="campo_descripcionActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JLabel" name="etq_genero_libro">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Segoe UI" size="14" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Descripcion"/>
+              </Properties>
+            </Component>
             <Component class="javax.swing.JTextField" name="campo_genero">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -199,33 +223,12 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="campo_generoActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JLabel" name="etq_genero_libro">
+            <Component class="javax.swing.JLabel" name="Genero">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Segoe UI" size="14" style="0"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Genero"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JTextField" name="campo_anio">
-              <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                </Property>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Segoe UI" size="14" style="0"/>
-                </Property>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="campo_anioActionPerformed"/>
-              </Events>
-            </Component>
-            <Component class="javax.swing.JLabel" name="etq_a&#xf1;o_libro">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Segoe UI" size="14" style="0"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="A&#xf1;o Publicacion" noResource="true"/>
+                <Property name="text" type="java.lang.String" value="Genero" noResource="true"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="etq_titulo_libro4">
@@ -233,10 +236,10 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Segoe UI" size="14" style="0"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Isbn"/>
+                <Property name="text" type="java.lang.String" value="Valor prestamo"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="campo_isbn">
+            <Component class="javax.swing.JTextField" name="campo_valor_prestamo">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -246,7 +249,7 @@
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="campo_isbnActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="campo_valor_prestamoActionPerformed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JButton" name="btn_agregar_libro">
@@ -264,6 +267,27 @@
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_agregar_libroActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JLabel" name="etq_titulo_libro5">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Segoe UI" size="14" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Cantidad disponible"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="campo_cantidad_disponible">
+              <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                </Property>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Segoe UI" size="14" style="0"/>
+                </Property>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="campo_cantidad_disponibleActionPerformed"/>
               </Events>
             </Component>
           </SubComponents>
