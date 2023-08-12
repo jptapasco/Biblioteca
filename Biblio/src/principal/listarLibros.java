@@ -5,12 +5,12 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.swing.table.DefaultTableModel;
 
-public class listarClientes extends javax.swing.JPanel {
+public class listarLibros extends javax.swing.JPanel {
 
     DataBase basedatos;
     DefaultTableModel modelo;
     
-    public listarClientes(DataBase basedatos) {
+    public listarLibros(DataBase basedatos) {
         this.basedatos = basedatos;
         initComponents();
         initModeloComponents();
@@ -22,17 +22,28 @@ public class listarClientes extends javax.swing.JPanel {
     }
     
     public void cargarListaPersonas(){
-        ResultSet listado = this.basedatos.listaLibros();
+        ResultSet listado = this.basedatos.listarLibros();
+        
         if (listado!=null) {
             try {
                 modelo.setRowCount(0);
                 do{
-                    String id_libro = listado.getString("id_libros");
+                    String id_libro = listado.getString("id_libro");
                     String titulo = listado.getString("titulo");
-                    String isbn = listado.getString("isbn");
+                    String autor = listado.getString("autor");
+                    String descripcion = listado.getString("descripcion");
+                    String genero = listado.getString("genero");
+                    String cantidad_disponible = listado.getString("cantidad_disponible");
+                    String valor_prestamo = listado.getString("valor_prestamo");
                     String estado = listado.getString("estado");
                     
-                    Object[] temp = new Object[]{id_libro, titulo, isbn, estado};
+                    int intValue = Integer.parseInt(cantidad_disponible);
+                    if (intValue < 1) {
+                        estado = "Agotado";
+                        System.out.println("Agotado");
+                    }
+                    
+                    Object[] temp = new Object[]{id_libro, titulo, autor,descripcion, genero ,cantidad_disponible,valor_prestamo,estado};
                     modelo.addRow(temp);
                 }while( listado.next() );
             } catch (SQLException ex) {
@@ -66,7 +77,7 @@ public class listarClientes extends javax.swing.JPanel {
 
             },
             new String [] {
-                "ID", "Libro", "ISBN", "Estado", "Prestar", "Editar", "Eliminar"
+                "ID", "Titulo", "Autor", "Descripcion", "Genero", "Cantidad disponible", "Valor prestamo", "Estado"
             }
         ));
         tabla_libros.addAncestorListener(new javax.swing.event.AncestorListener() {
@@ -87,7 +98,7 @@ public class listarClientes extends javax.swing.JPanel {
             .addGroup(panel_contenedor3Layout.createSequentialGroup()
                 .addGroup(panel_contenedor3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(etq_titulo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 484, Short.MAX_VALUE))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 478, Short.MAX_VALUE))
                 .addContainerGap())
         );
         panel_contenedor3Layout.setVerticalGroup(

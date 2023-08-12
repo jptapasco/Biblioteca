@@ -22,7 +22,7 @@ public class DataBase {
             this.manipularDB = this.conexion.createStatement();
             System.out.println("Conexion a DataBase Exitosa.");
         } catch (SQLException ex) {
-            System.out.println("Error en conexion a base de dato: "+ex.getMessage());
+            System.out.println("Error en conexion a base de datos: "+ex.getMessage());
         }
     }
     
@@ -59,7 +59,7 @@ public class DataBase {
         return validar;
     }
     
-    public ResultSet listaLibros(){
+    public ResultSet listarLibros(){
         ResultSet lista = null;
         
         try {

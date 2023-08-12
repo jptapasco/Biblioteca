@@ -20,8 +20,8 @@ CREATE TABLE libros (
     autor VARCHAR(200),
     descripcion VARCHAR(300),
     genero VARCHAR(15),
-    cantidad_disponible INT,
-    valor_prestamo INT,
+    cantidad_disponible VARCHAR(10),
+    valor_prestamo VARCHAR(10),
     estado VARCHAR(20)
 );
 

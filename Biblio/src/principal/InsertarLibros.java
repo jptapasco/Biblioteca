@@ -1,6 +1,7 @@
 package principal;
 
 import clases.DataBase;
+import javax.swing.JOptionPane;
 
 public class InsertarLibros extends javax.swing.JPanel {
     
@@ -154,9 +155,9 @@ public class InsertarLibros extends javax.swing.JPanel {
                 .addComponent(etq_autor_libro)
                 .addGap(3, 3, 3)
                 .addComponent(campo_autor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(etq_genero_libro)
-                .addGap(18, 18, 18)
+                .addGap(12, 12, 12)
                 .addComponent(campo_descripcion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(9, 9, 9)
                 .addComponent(Genero)
@@ -246,6 +247,8 @@ public class InsertarLibros extends javax.swing.JPanel {
             campo_descripcion.setText("");
             campo_cantidad_disponible.setText("");
             campo_valor_prestamo.setText("");
+            
+            JOptionPane.showMessageDialog(null, "Libro registrado con exito!.");
         }
     }//GEN-LAST:event_btn_agregar_libroActionPerformed
 
