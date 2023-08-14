@@ -39,11 +39,11 @@ public class DataBase {
         return respuesta;  
     }
     
-       public boolean agregarUsuario(String tipo_usuario, String nombre,String apellido, String cedula, String telefono, String direccion){
+       public boolean agregarUsuario(String cedula, String rol,String nombre ,String apellido, String telefono, String direccion){
         boolean respuesta = false;
         
         try {
-            String consulta = "INSERT INTO usuarios (rol, nombre, apellido, cedula, telefono, direccion) VALUES ('"+tipo_usuario+"','"+nombre+"','"+apellido+"','"+cedula+"','"+telefono+"','"+direccion+"')";
+            String consulta = "INSERT INTO usuarios (cedula, rol, nombre, apellido, telefono, direccion) VALUES ('"+cedula+"','"+rol+"','"+nombre+"','"+apellido+"','"+telefono+"','"+direccion+"')";
             int resultado = this.manipularDB.executeUpdate(consulta);
             if (resultado==1) {
                 respuesta = true;

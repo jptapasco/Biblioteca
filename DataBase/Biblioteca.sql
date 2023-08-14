@@ -6,10 +6,10 @@ USE biblioteca;
 CREATE TABLE usuarios (
     id_usuario INT AUTO_INCREMENT PRIMARY KEY,
     cedula VARCHAR(10),
-    rol VARCHAR(10),
+    rol VARCHAR(15),
     nombre VARCHAR(30),
     apellido VARCHAR(30),
-    telefono INT UNIQUE,
+    telefono VARCHAR(10) UNIQUE,
     direccion VARCHAR(200)  
 );
 

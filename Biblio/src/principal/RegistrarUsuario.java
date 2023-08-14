@@ -64,7 +64,7 @@ public class RegistrarUsuario extends javax.swing.JPanel {
 
         etq_direccion.setText("Direccion");
 
-        rol_select.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Usuario", "Administrador" }));
+        rol_select.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Bibliotecario", "Cliente" }));
         rol_select.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 rol_selectActionPerformed(evt);
@@ -203,17 +203,18 @@ public class RegistrarUsuario extends javax.swing.JPanel {
     }//GEN-LAST:event_rol_selectActionPerformed
 
     private void btn_registrar_userActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_registrar_userActionPerformed
-        String tipo_usuario = (String) rol_select.getSelectedItem();
+        String rol = (String) rol_select.getSelectedItem();
         String nombre = campo_nombre.getText();
         String apellido = campo_apellido.getText();
         String cedula = campo_cedula.getText();
         String telefono = campo_telefono.getText();
         String direccion = campo_direccion.getText();
         
-         boolean respuesta = this.basedatos.agregarUsuario(tipo_usuario, nombre, apellido, cedula, telefono, direccion);
+         boolean respuesta = this.basedatos.agregarUsuario(cedula, rol, nombre, apellido , telefono, direccion);
         if (respuesta) {
             campo_nombre.setText("");
             campo_apellido.setText("");
+            campo_cedula.setText("");
             campo_telefono.setText("");
             campo_direccion.setText("");
 
