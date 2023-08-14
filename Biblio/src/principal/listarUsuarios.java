@@ -5,38 +5,37 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.swing.table.DefaultTableModel;
 
-public class listarLibros extends javax.swing.JPanel {
-
+public class listarUsuarios extends javax.swing.JPanel {
+    
     DataBase basedatos;
     DefaultTableModel modelo;
-    
-    public listarLibros(DataBase basedatos) {
+
+    public listarUsuarios(DataBase basedatos) {
         this.basedatos = basedatos;
         initComponents();
         initModeloComponents();
-        cargarListaLibros();
-    }
-
-    public void initModeloComponents(){
-        modelo = (DefaultTableModel) tabla_libros.getModel();
+        cargarListaUsuarios();
     }
     
-    public void cargarListaLibros(){
-        ResultSet listado = this.basedatos.listaLibros();
+    public void initModeloComponents(){
+        modelo = (DefaultTableModel) tabla_usuarios.getModel();
+    }
+    
+    public void cargarListaUsuarios(){
+        ResultSet listado = this.basedatos.listaUsuarios();
         if (listado!=null) {
             try {
                 modelo.setRowCount(0);
                 do{
-                    String id_libro = listado.getString("id_libro");
-                    String titulo = listado.getString("titulo");
-                    String autor = listado.getString("autor");
-                    String descripcion = listado.getString("descripcion");
-                    String genero = listado.getString("genero");
-                    String cantidad = listado.getString("cantidad_disponible");
-                    String valor = listado.getString("valor_prestamo");
-                    String estado = listado.getString("estado_calculado");
+                    String id_usuario = listado.getString("id_usuario");
+                    String cedula = listado.getString("cedula");
+                    String rol = listado.getString("rol");
+                    String nombre = listado.getString("nombre");
+                    String apellido = listado.getString("apellido");
+                    String telefono = listado.getString("telefono");
+                    String direccion = listado.getString("direccion");
                     
-                    Object[] temp = new Object[]{id_libro, titulo, autor, descripcion, genero, cantidad, valor, estado};
+                    Object[] temp = new Object[]{id_usuario, cedula, rol, nombre, apellido, telefono, direccion};
                     modelo.addRow(temp);
                 }while( listado.next() );
             } catch (SQLException ex) {
@@ -54,7 +53,7 @@ public class listarLibros extends javax.swing.JPanel {
         panel_contenedor3 = new javax.swing.JPanel();
         etq_titulo = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        tabla_libros = new javax.swing.JTable();
+        tabla_usuarios = new javax.swing.JTable();
 
         panel_contenedor3.setPreferredSize(new java.awt.Dimension(430, 0));
 
@@ -62,27 +61,27 @@ public class listarLibros extends javax.swing.JPanel {
         etq_titulo.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
         etq_titulo.setForeground(new java.awt.Color(0, 0, 0));
         etq_titulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        etq_titulo.setText("LISTA DE LIBROS");
+        etq_titulo.setText("LISTA DE USUARIOS");
         etq_titulo.setOpaque(true);
 
-        tabla_libros.setModel(new javax.swing.table.DefaultTableModel(
+        tabla_usuarios.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "ID", "Titulo", "Autor", "Descripcion", "Genero", "Cantidad Disponible", "Valor Prestamo", "Estado"
+                "ID", "Cedula", "Rol", "Nombre", "Apellido", "Telefono", "Direccion"
             }
         ));
-        tabla_libros.addAncestorListener(new javax.swing.event.AncestorListener() {
+        tabla_usuarios.addAncestorListener(new javax.swing.event.AncestorListener() {
             public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
-                tabla_librosAncestorAdded(evt);
+                tabla_usuariosAncestorAdded(evt);
             }
             public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
             }
             public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
             }
         });
-        jScrollPane1.setViewportView(tabla_libros);
+        jScrollPane1.setViewportView(tabla_usuarios);
 
         javax.swing.GroupLayout panel_contenedor3Layout = new javax.swing.GroupLayout(panel_contenedor3);
         panel_contenedor3.setLayout(panel_contenedor3Layout);
@@ -121,14 +120,15 @@ public class listarLibros extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void tabla_librosAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_tabla_librosAncestorAdded
+    private void tabla_usuariosAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_tabla_usuariosAncestorAdded
         // TODO add your handling code here:
-    }//GEN-LAST:event_tabla_librosAncestorAdded
+    }//GEN-LAST:event_tabla_usuariosAncestorAdded
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel etq_titulo;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JPanel panel_contenedor3;
-    private javax.swing.JTable tabla_libros;
+    private javax.swing.JTable tabla_usuarios;
     // End of variables declaration//GEN-END:variables
 }

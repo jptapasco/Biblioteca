@@ -1,8 +1,6 @@
 package clases;
 
 import java.sql.*;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 public class DataBase {
     Connection conexion;
@@ -22,19 +20,33 @@ public class DataBase {
             this.manipularDB = this.conexion.createStatement();
             System.out.println("Conexion a DataBase Exitosa.");
         } catch (SQLException ex) {
-            System.out.println("Error en conexion a base de datos: "+ex.getMessage());
+            System.out.println("Error en conexion a base de dato: "+ex.getMessage());
         }
     }
     
-    public boolean insertarLibro(String titulo, String autor, String descripcion, String genero, String cantidad_disponible, String valor_prestamo,String estado){
+    public boolean insertarLibro(String titulo, String autor, String descripcion, String genero, String cantidad_disponible, String valor_prestamo){
+        boolean respuesta = false;
+        
+            try {
+                String consulta = "INSERT INTO libros (titulo, autor, descripcion, genero, cantidad_disponible, valor_prestamo) VALUES ('"+titulo+"','"+autor+"','"+descripcion+"','"+genero+"','"+cantidad_disponible+"','"+valor_prestamo+"')";
+                int resultado = this.manipularDB.executeUpdate(consulta);
+                if (resultado==1) {
+                    respuesta = true;
+                }
+            } catch (SQLException ex) {
+                System.out.println("Error al insertar: "+ex.getMessage());
+            }
+        return respuesta;  
+    }
+    
+       public boolean agregarUsuario(String tipo_usuario, String nombre,String apellido, String cedula, String telefono, String direccion){
         boolean respuesta = false;
         
         try {
-            String consulta = "INSERT INTO libros (titulo, autor, descripcion, genero, cantidad_disponible, valor_prestamo, estado) VALUES ('"+titulo+"','"+autor+"','"+descripcion+"','"+genero+"','"+cantidad_disponible+"','"+valor_prestamo+"','"+estado+"')";
+            String consulta = "INSERT INTO usuarios (rol, nombre, apellido, cedula, telefono, direccion) VALUES ('"+tipo_usuario+"','"+nombre+"','"+apellido+"','"+cedula+"','"+telefono+"','"+direccion+"')";
             int resultado = this.manipularDB.executeUpdate(consulta);
             if (resultado==1) {
                 respuesta = true;
-                System.out.println("Ingresado con exito");
             }
         } catch (SQLException ex) {
             System.out.println("Error al insertar: "+ex.getMessage());
@@ -42,28 +54,11 @@ public class DataBase {
         return respuesta;
     }
     
-    public boolean registrarUsuario(String cedula,String rol, String nombre,String apellido , String telefono, String direccion){
-        boolean validar = false;
-        try {    
-            String consulta_registrar = "INSERT INTO usuarios (cedula, rol, nombre, apellido, telefono, direccion)";
-            int resultado = this.manipularDB.executeUpdate(consulta_registrar);
-            
-            if (resultado == 1) {
-                validar = true;
-            }
-                        
-        } catch (SQLException ex) {
-            System.out.println("ERROR al insertar usuario: "+ex.getMessage());
-        }
-        
-        return validar;
-    }
-    
-    public ResultSet listarLibros(){
+    public ResultSet listaLibros(){
         ResultSet lista = null;
         
         try {
-            String consulta = "SELECT * FROM libros";
+            String consulta = "SELECT * FROM vista_libros";
             lista = this.manipularDB.executeQuery(consulta);
             lista.next();
             
@@ -77,4 +72,25 @@ public class DataBase {
         }
         return lista;
     }
+    
+    public ResultSet listaUsuarios(){
+        ResultSet lista = null;
+        
+        try {
+            String consulta = "SELECT * FROM usuarios";
+            lista = this.manipularDB.executeQuery(consulta);
+            lista.next();
+            
+            if (lista.getRow()==1) {
+                return lista;
+            }else{
+                return null;
+            }
+        } catch (SQLException ex) {
+            System.out.println("Error en SELECT: "+ex.getMessage());
+        }
+        return lista;
+    }
+    
+    
 }

@@ -31,7 +31,7 @@ public class InsertarLibros extends javax.swing.JPanel {
         btn_agregar_libro = new javax.swing.JButton();
         etq_titulo_libro5 = new javax.swing.JLabel();
         campo_cantidad_disponible = new javax.swing.JTextField();
-        opciones_genero = new javax.swing.JComboBox<>();
+        genero_select = new javax.swing.JComboBox<>();
 
         etq_titulo.setBackground(new java.awt.Color(204, 204, 204));
         etq_titulo.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
@@ -40,13 +40,14 @@ public class InsertarLibros extends javax.swing.JPanel {
         etq_titulo.setText("REGISTRAR LIBRO");
         etq_titulo.setOpaque(true);
 
-        formulario.setBackground(new java.awt.Color(255, 255, 255));
+        formulario.setBackground(new java.awt.Color(204, 204, 204));
 
         etq_titulo_libro.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         etq_titulo_libro.setText("Titulo");
 
         campo_titulo.setBackground(new java.awt.Color(255, 255, 255));
         campo_titulo.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        campo_titulo.setToolTipText("");
         campo_titulo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 campo_tituloActionPerformed(evt);
@@ -110,15 +111,10 @@ public class InsertarLibros extends javax.swing.JPanel {
             }
         });
 
-        opciones_genero.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Epico", "Romance", "Aventura", "Misterio", "Fantasia" }));
-        opciones_genero.addHierarchyListener(new java.awt.event.HierarchyListener() {
-            public void hierarchyChanged(java.awt.event.HierarchyEvent evt) {
-                opciones_generoHierarchyChanged(evt);
-            }
-        });
-        opciones_genero.addActionListener(new java.awt.event.ActionListener() {
+        genero_select.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Ficción", "Ciencia Ficción", "Poesia", "Aventura", "Fantasía" }));
+        genero_select.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                opciones_generoActionPerformed(evt);
+                genero_selectActionPerformed(evt);
             }
         });
 
@@ -127,22 +123,27 @@ public class InsertarLibros extends javax.swing.JPanel {
         formularioLayout.setHorizontalGroup(
             formularioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, formularioLayout.createSequentialGroup()
-                .addContainerGap(300, Short.MAX_VALUE)
-                .addGroup(formularioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addContainerGap(210, Short.MAX_VALUE)
+                .addGroup(formularioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(etq_autor_libro)
                     .addComponent(etq_genero_libro)
                     .addComponent(etq_titulo_libro)
-                    .addComponent(etq_titulo_libro4)
-                    .addComponent(campo_valor_prestamo, javax.swing.GroupLayout.DEFAULT_SIZE, 270, Short.MAX_VALUE)
-                    .addComponent(etq_titulo_libro5)
-                    .addComponent(campo_cantidad_disponible, javax.swing.GroupLayout.DEFAULT_SIZE, 270, Short.MAX_VALUE)
-                    .addComponent(campo_autor, javax.swing.GroupLayout.DEFAULT_SIZE, 270, Short.MAX_VALUE)
-                    .addComponent(btn_agregar_libro, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(campo_titulo, javax.swing.GroupLayout.DEFAULT_SIZE, 270, Short.MAX_VALUE)
-                    .addComponent(Genero)
-                    .addComponent(campo_descripcion, javax.swing.GroupLayout.DEFAULT_SIZE, 270, Short.MAX_VALUE)
-                    .addComponent(opciones_genero, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(90, 90, 90))
+                    .addGroup(formularioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(formularioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(etq_titulo_libro4)
+                            .addComponent(campo_valor_prestamo, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(etq_titulo_libro5)
+                            .addComponent(campo_cantidad_disponible, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(campo_autor, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btn_agregar_libro))
+                    .addComponent(campo_titulo, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(formularioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, formularioLayout.createSequentialGroup()
+                            .addComponent(Genero)
+                            .addGap(68, 68, 68)
+                            .addComponent(genero_select, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(campo_descripcion, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(180, 180, 180))
         );
         formularioLayout.setVerticalGroup(
             formularioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -155,15 +156,15 @@ public class InsertarLibros extends javax.swing.JPanel {
                 .addComponent(etq_autor_libro)
                 .addGap(3, 3, 3)
                 .addComponent(campo_autor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(etq_genero_libro)
-                .addGap(12, 12, 12)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(campo_descripcion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(9, 9, 9)
-                .addComponent(Genero)
-                .addGap(4, 4, 4)
-                .addComponent(opciones_genero, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
+                .addGroup(formularioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Genero)
+                    .addComponent(genero_select, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
                 .addComponent(etq_titulo_libro5)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(campo_cantidad_disponible, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -171,7 +172,7 @@ public class InsertarLibros extends javax.swing.JPanel {
                 .addComponent(etq_titulo_libro4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(campo_valor_prestamo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
                 .addComponent(btn_agregar_libro)
                 .addGap(87, 87, 87))
         );
@@ -180,11 +181,11 @@ public class InsertarLibros extends javax.swing.JPanel {
         crear_contenedor.setLayout(crear_contenedorLayout);
         crear_contenedorLayout.setHorizontalGroup(
             crear_contenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, crear_contenedorLayout.createSequentialGroup()
+            .addGroup(crear_contenedorLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(crear_contenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(formulario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(etq_titulo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(crear_contenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(etq_titulo, javax.swing.GroupLayout.DEFAULT_SIZE, 660, Short.MAX_VALUE)
+                    .addComponent(formulario, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         crear_contenedorLayout.setVerticalGroup(
@@ -215,7 +216,7 @@ public class InsertarLibros extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void campo_tituloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campo_tituloActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_campo_tituloActionPerformed
 
     private void campo_autorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campo_autorActionPerformed
@@ -231,39 +232,35 @@ public class InsertarLibros extends javax.swing.JPanel {
     }//GEN-LAST:event_campo_valor_prestamoActionPerformed
 
     private void btn_agregar_libroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_agregar_libroActionPerformed
-        String titulo = campo_titulo.getText();
-        String autor = campo_autor.getText();
-        String descripcion = campo_descripcion.getText();
-        String genero = (String) opciones_genero.getSelectedItem();
-        String cantidad_disponible = campo_cantidad_disponible.getText();
-        String valor_prestamo = campo_valor_prestamo.getText();
-        String estado = "Activo";
-        
-        
-        boolean respuesta = this.basedatos.insertarLibro(titulo, autor, descripcion, genero, cantidad_disponible, valor_prestamo, estado);
-        if (respuesta) {
-            campo_titulo.setText("");
-            campo_autor.setText("");
-            campo_descripcion.setText("");
-            campo_cantidad_disponible.setText("");
-            campo_valor_prestamo.setText("");
             
-            JOptionPane.showMessageDialog(null, "Libro registrado con exito!.");
-        }
+            String titulo = campo_titulo.getText();
+            String autor = campo_autor.getText();
+            String descripcion = campo_descripcion.getText();
+            String genero = (String) genero_select.getSelectedItem();
+            String cantidad_disponible = campo_cantidad_disponible.getText();
+            String valor_prestamo = campo_valor_prestamo.getText();
+            
+            if (!titulo.isEmpty()){
+                boolean respuesta = this.basedatos.insertarLibro(titulo, autor, descripcion, genero, cantidad_disponible, valor_prestamo);
+                if (respuesta) {
+                    campo_titulo.setText("");
+                    campo_autor.setText("");
+                    campo_descripcion.setText("");
+                    campo_cantidad_disponible.setText("");
+                    campo_valor_prestamo.setText("");
+                }
+            }else{
+                JOptionPane.showMessageDialog(this,"Faltan campos por llenar");
+            }      
     }//GEN-LAST:event_btn_agregar_libroActionPerformed
 
     private void campo_cantidad_disponibleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campo_cantidad_disponibleActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_campo_cantidad_disponibleActionPerformed
 
-    private void opciones_generoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opciones_generoActionPerformed
-        String opcion_elegida = (String) opciones_genero.getSelectedItem();
-        System.out.println("Opcion elegida: " + opcion_elegida);
-    }//GEN-LAST:event_opciones_generoActionPerformed
-
-    private void opciones_generoHierarchyChanged(java.awt.event.HierarchyEvent evt) {//GEN-FIRST:event_opciones_generoHierarchyChanged
+    private void genero_selectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_genero_selectActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_opciones_generoHierarchyChanged
+    }//GEN-LAST:event_genero_selectActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -282,6 +279,6 @@ public class InsertarLibros extends javax.swing.JPanel {
     private javax.swing.JLabel etq_titulo_libro4;
     private javax.swing.JLabel etq_titulo_libro5;
     private javax.swing.JPanel formulario;
-    private javax.swing.JComboBox<String> opciones_genero;
+    private javax.swing.JComboBox<String> genero_select;
     // End of variables declaration//GEN-END:variables
 }

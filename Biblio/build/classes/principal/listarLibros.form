@@ -16,10 +16,10 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="0" attributes="0">
+          <Group type="102" alignment="1" attributes="0">
               <EmptySpace max="32767" attributes="0"/>
-              <Component id="panel_contenedor3" min="-2" pref="490" max="-2" attributes="0"/>
-              <EmptySpace min="-2" max="-2" attributes="0"/>
+              <Component id="panel_contenedor3" min="-2" pref="603" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -47,7 +47,7 @@
               <Group type="102" attributes="0">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="etq_titulo" max="32767" attributes="0"/>
-                      <Component id="jScrollPane1" pref="478" max="32767" attributes="0"/>
+                      <Component id="jScrollPane1" pref="597" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
@@ -97,8 +97,8 @@
                     <Column editable="true" title="Autor" type="java.lang.Object"/>
                     <Column editable="true" title="Descripcion" type="java.lang.Object"/>
                     <Column editable="true" title="Genero" type="java.lang.Object"/>
-                    <Column editable="true" title="Cantidad disponible" type="java.lang.Object"/>
-                    <Column editable="true" title="Valor prestamo" type="java.lang.Object"/>
+                    <Column editable="true" title="Cantidad Disponible" type="java.lang.Object"/>
+                    <Column editable="true" title="Valor Prestamo" type="java.lang.Object"/>
                     <Column editable="true" title="Estado" type="java.lang.Object"/>
                   </Table>
                 </Property>

@@ -1,4 +1,3 @@
-
 package principal;
 
 import clases.DataBase;
@@ -132,8 +131,16 @@ public class Login extends javax.swing.JFrame {
         String username = campo_usuario.getText();
         String password = campo_password.getText();
         
+        if (username.equalsIgnoreCase("erick") && password.equalsIgnoreCase("12345")) {   
+            MenuUsuarios usuarios = new MenuUsuarios(basedatos);
+            dispose();   
+            System.out.println("HAS INICIADO SESION");
+        }else{
+            System.out.println("DATOS INVALIDOS");
+        }
+        
         if (username.equalsIgnoreCase("erickvn") && password.equalsIgnoreCase("12345")) {   
-            Menu ventana = new Menu(basedatos);
+            Menu admin = new Menu(basedatos);
             dispose();   
             System.out.println("HAS INICIADO SESION");
         }else{
@@ -144,7 +151,6 @@ public class Login extends javax.swing.JFrame {
     private void campo_passwordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campo_passwordActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_campo_passwordActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_ingresar;
