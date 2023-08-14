@@ -26,10 +26,7 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="0" attributes="0">
-              <Component id="panel_contenedor" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-          </Group>
+          <Component id="panel_contenedor" min="-2" max="-2" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
@@ -51,23 +48,18 @@
                           <Component id="label_titulo" max="32767" attributes="0"/>
                       </Group>
                       <Group type="102" attributes="0">
+                          <EmptySpace min="14" pref="14" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" attributes="0">
-                                  <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="btn_registrar" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="etq_libros" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="etq_usuarios" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="btn_listar" pref="144" max="32767" attributes="0"/>
-                                      <Component id="buscador" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="btn_registrar_user" max="32767" attributes="0"/>
-                                      <Component id="btn_lista_clientes" alignment="0" pref="144" max="32767" attributes="0"/>
-                                  </Group>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="btn_registrar" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="etq_libros" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="etq_usuarios" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="btn_listar" pref="144" max="32767" attributes="0"/>
+                                  <Component id="buscador" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="btn_registrar_user" max="32767" attributes="0"/>
+                                  <Component id="btn_lista_clientes" alignment="0" pref="144" max="32767" attributes="0"/>
                               </Group>
-                              <Group type="102" attributes="0">
-                                  <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
-                                  <Component id="btn_salir" min="-2" max="-2" attributes="0"/>
-                              </Group>
+                              <Component id="btn_salir" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Component id="panel_contenedor2" pref="664" max="32767" attributes="0"/>
@@ -98,7 +90,7 @@
                           <Component id="btn_registrar_user" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
                           <Component id="btn_lista_clientes" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace pref="222" max="32767" attributes="0"/>
+                          <EmptySpace pref="257" max="32767" attributes="0"/>
                           <Component id="btn_salir" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
                       </Group>

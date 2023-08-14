@@ -210,7 +210,7 @@ public class RegistrarUsuario extends javax.swing.JPanel {
         String telefono = campo_telefono.getText();
         String direccion = campo_direccion.getText();
         
-         boolean respuesta = this.basedatos.agregarUsuario(cedula, rol, nombre, apellido , telefono, direccion);
+        boolean respuesta = this.basedatos.agregarUsuario(cedula, rol, nombre, apellido , telefono, direccion);
         if (respuesta) {
             campo_nombre.setText("");
             campo_apellido.setText("");

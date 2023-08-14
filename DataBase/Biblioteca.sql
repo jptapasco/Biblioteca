@@ -5,7 +5,7 @@ USE biblioteca;
 
 CREATE TABLE usuarios (
     id_usuario INT AUTO_INCREMENT PRIMARY KEY,
-    cedula VARCHAR(10),
+    cedula VARCHAR(10) UNIQUE,
     rol VARCHAR(15),
     nombre VARCHAR(30),
     apellido VARCHAR(30),
@@ -56,4 +56,15 @@ CREATE TABLE multas (
     FOREIGN KEY (estado) REFERENCES estado_pago(id_estado_pago)
 );
 
-
+CREATE VIEW vista_libros AS
+SELECT
+    id_libro,
+    titulo,
+    autor,
+    descripcion,
+    genero,
+    cantidad_disponible,
+    valor_prestamo,
+    estado,
+    CASE WHEN cantidad_disponible > 0 THEN 'Disponible' ELSE 'No Disponible' END AS estado_calculado
+FROM libros;

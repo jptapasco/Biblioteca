@@ -1,6 +1,9 @@
 package clases;
 
 import java.sql.*;
+import javax.swing.JOptionPane;
+import principal.Menu;
+import principal.MenuUsuarios;
 
 public class DataBase {
     Connection conexion;
@@ -23,7 +26,10 @@ public class DataBase {
             System.out.println("Error en conexion a base de dato: "+ex.getMessage());
         }
     }
+   
+
     
+    //INSERTAR LIBROS (BIBLIOTECARIO)
     public boolean insertarLibro(String titulo, String autor, String descripcion, String genero, String cantidad_disponible, String valor_prestamo){
         boolean respuesta = false;
         
@@ -39,7 +45,8 @@ public class DataBase {
         return respuesta;  
     }
     
-       public boolean agregarUsuario(String cedula, String rol,String nombre ,String apellido, String telefono, String direccion){
+    //AGREGAR USUARIOS (BIBLIOTECARIO)
+    public boolean agregarUsuario(String cedula, String rol,String nombre ,String apellido, String telefono, String direccion){
         boolean respuesta = false;
         
         try {
@@ -53,26 +60,9 @@ public class DataBase {
         }
         return respuesta;
     }
+     
     
-    public ResultSet listaLibros(){
-        ResultSet lista = null;
-        
-        try {
-            String consulta = "SELECT * FROM vista_libros";
-            lista = this.manipularDB.executeQuery(consulta);
-            lista.next();
-            
-            if (lista.getRow()==1) {
-                return lista;
-            }else{
-                return null;
-            }
-        } catch (SQLException ex) {
-            System.out.println("Error en SELECT: "+ex.getMessage());
-        }
-        return lista;
-    }
-    
+    //LISTA DE USUARIOS (BIBLIOTECARIO)
     public ResultSet listaUsuarios(){
         ResultSet lista = null;
         
@@ -91,6 +81,32 @@ public class DataBase {
         }
         return lista;
     }
+    
+    //LISTA DE LIBROS (AMBOS)
+    public ResultSet listaLibros(){
+        ResultSet lista = null;
+        
+        try {
+            String consulta = "SELECT * FROM vista_libros";
+            lista = this.manipularDB.executeQuery(consulta);
+            lista.next();
+            
+            if (lista.getRow()==1) {
+                return lista;
+            }else{
+                return null;
+            }
+        } catch (SQLException ex) {
+            System.out.println("Error en SELECT: "+ex.getMessage());
+        }
+        return lista;
+    }
+
+    private void dispose() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+    
+    
     
     
 }
