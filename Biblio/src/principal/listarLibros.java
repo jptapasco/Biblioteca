@@ -51,14 +51,11 @@ public class listarLibros extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        panel_contenedor3 = new javax.swing.JPanel();
         etq_titulo = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tabla_libros = new javax.swing.JTable();
 
-        panel_contenedor3.setPreferredSize(new java.awt.Dimension(430, 0));
-
-        etq_titulo.setBackground(new java.awt.Color(204, 204, 204));
+        etq_titulo.setBackground(new java.awt.Color(255, 255, 255));
         etq_titulo.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
         etq_titulo.setForeground(new java.awt.Color(0, 0, 0));
         etq_titulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -84,39 +81,19 @@ public class listarLibros extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(tabla_libros);
 
-        javax.swing.GroupLayout panel_contenedor3Layout = new javax.swing.GroupLayout(panel_contenedor3);
-        panel_contenedor3.setLayout(panel_contenedor3Layout);
-        panel_contenedor3Layout.setHorizontalGroup(
-            panel_contenedor3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panel_contenedor3Layout.createSequentialGroup()
-                .addGroup(panel_contenedor3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(etq_titulo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 597, Short.MAX_VALUE))
-                .addContainerGap())
-        );
-        panel_contenedor3Layout.setVerticalGroup(
-            panel_contenedor3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panel_contenedor3Layout.createSequentialGroup()
-                .addComponent(etq_titulo, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 435, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(28, 28, 28))
-        );
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(panel_contenedor3, javax.swing.GroupLayout.PREFERRED_SIZE, 603, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+            .addComponent(etq_titulo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 646, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(panel_contenedor3, javax.swing.GroupLayout.PREFERRED_SIZE, 470, Short.MAX_VALUE)
+                .addComponent(etq_titulo, javax.swing.GroupLayout.DEFAULT_SIZE, 46, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 474, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -128,7 +105,6 @@ public class listarLibros extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel etq_titulo;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JPanel panel_contenedor3;
     private javax.swing.JTable tabla_libros;
     // End of variables declaration//GEN-END:variables
 }

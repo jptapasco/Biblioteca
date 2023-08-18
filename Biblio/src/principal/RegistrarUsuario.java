@@ -150,7 +150,7 @@ public class RegistrarUsuario extends javax.swing.JPanel {
                 .addComponent(campo_direccion, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(27, 27, 27)
                 .addComponent(btn_registrar_user, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(89, Short.MAX_VALUE))
+                .addContainerGap(44, Short.MAX_VALUE))
         );
 
         etq_titulo.setBackground(new java.awt.Color(204, 204, 204));

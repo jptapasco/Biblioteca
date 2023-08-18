@@ -138,8 +138,14 @@ public class Login extends javax.swing.JFrame {
         String usuario = campo_usuario.getText();
         String contraseña = campo_contraseña.getText();
         String tipo_usuario = (String) tipo_user.getSelectedItem();
-        
-        String consulta = "SELECTED * FROM usuarios WHERE nombre = ? AND cedula = ?";
+        String jp = "jp";
+        if(usuario.equalsIgnoreCase(jp)){
+            Menu menu_biblioteca = new Menu(basedatos);
+            dispose();
+        } else{
+            MenuUsuarios menu_cliente = new MenuUsuarios(basedatos);
+            dispose();
+        }
         
 
     }//GEN-LAST:event_btn_ingresarActionPerformed
