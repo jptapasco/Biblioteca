@@ -53,17 +53,8 @@
               <Group type="102" attributes="0">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
-                          <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" alignment="1" attributes="0">
-                                  <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="1" attributes="0">
-                                  <Component id="btn_salir" min="-2" pref="60" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="98" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
+                          <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
+                          <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
@@ -74,9 +65,13 @@
                               <Component id="btn_editar_datos" alignment="0" min="-2" pref="152" max="-2" attributes="0"/>
                               <Component id="btn_pagar_multas" alignment="0" min="-2" pref="152" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
+                          <Component id="btn_salir" min="-2" pref="70" max="-2" attributes="0"/>
                       </Group>
                   </Group>
+                  <EmptySpace max="-2" attributes="0"/>
                   <Component id="panel_vista1" max="32767" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
@@ -101,7 +96,7 @@
                           <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
                           <Component id="btn_pagar_multas" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
-                          <Component id="btn_salir" min="-2" pref="19" max="-2" attributes="0"/>
+                          <Component id="btn_salir" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
                       <Component id="panel_vista1" max="32767" attributes="0"/>
@@ -263,7 +258,7 @@
                       <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="p2" max="32767" attributes="0"/>
-                          <Component id="p1" pref="619" max="32767" attributes="0"/>
+                          <Component id="p1" max="32767" attributes="0"/>
                           <Component id="p3" alignment="0" max="32767" attributes="0"/>
                           <Component id="p4" alignment="0" max="32767" attributes="0"/>
                           <Group type="102" attributes="0">
@@ -293,7 +288,7 @@
                       <Component id="p4" min="-2" pref="36" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="p5" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="44" max="32767" attributes="0"/>
+                      <EmptySpace pref="50" max="32767" attributes="0"/>
                       <Component id="etq_imagen_biblio" min="-2" pref="232" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
                   </Group>

@@ -111,7 +111,7 @@ public class InsertarLibros extends javax.swing.JPanel {
             }
         });
 
-        genero_select.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Ficción", "Ciencia Ficción", "Poesia", "Aventura", "Fantasía" }));
+        genero_select.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Ficción", "Ciencia Ficción", "Romance", "Aventura", "Fantasía" }));
         genero_select.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 genero_selectActionPerformed(evt);

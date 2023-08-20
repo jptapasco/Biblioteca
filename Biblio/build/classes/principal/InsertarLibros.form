@@ -293,7 +293,7 @@
                   <StringArray count="5">
                     <StringItem index="0" value="Ficci&#xf3;n"/>
                     <StringItem index="1" value="Ciencia Ficci&#xf3;n"/>
-                    <StringItem index="2" value="Poesia"/>
+                    <StringItem index="2" value="Romance"/>
                     <StringItem index="3" value="Aventura"/>
                     <StringItem index="4" value="Fantas&#xed;a"/>
                   </StringArray>

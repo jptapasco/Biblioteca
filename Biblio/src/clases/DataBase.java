@@ -1,6 +1,8 @@
 package clases;
 
 import java.sql.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import principal.Menu;
 import principal.MenuUsuarios;
@@ -8,6 +10,7 @@ import principal.MenuUsuarios;
 public class DataBase {
     Connection conexion;
     Statement manipularDB;
+    DataBase basedatos;
     
     public DataBase(){
         String hostname = "localhost";
@@ -27,6 +30,27 @@ public class DataBase {
         }
     }
    
+    
+    //INGRESAR AL SISTEMA (AMBOS)
+    public ResultSet ingresarSistema(String p_cedula, String p_rol, String p_nombre){
+        ResultSet busqueda = null;
+        try {
+            String buscar = "SELECT cedula, rol, nombre FROM usuarios WHERE cedula = '"+p_cedula+"' AND rol = '"+p_rol+"' AND nombre = '"+p_nombre+"' ";
+            busqueda = this.manipularDB.executeQuery(buscar);
+            busqueda.next();
+            
+            if(busqueda.getRow() == 1){
+                System.out.println("EXISTE");
+                return busqueda;
+            } else{
+                System.out.println("NO EXISTE");
+                return null;
+            }   
+        } catch (SQLException ex) {
+            System.out.println("Error al buscar un usuario"+ex.getMessage());
+        }
+        return busqueda;
+    }
 
     
     //INSERTAR LIBROS (BIBLIOTECARIO)
@@ -101,6 +125,7 @@ public class DataBase {
         }
         return lista;
     }
+    
 
     private void dispose() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody

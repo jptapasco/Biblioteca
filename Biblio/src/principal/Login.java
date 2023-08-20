@@ -2,8 +2,9 @@ package principal;
 
 import clases.DataBase;
 import java.awt.Image;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import javax.swing.ImageIcon;
-import javax.swing.JOptionPane;
 
 public class Login extends javax.swing.JFrame {
 
@@ -138,14 +139,28 @@ public class Login extends javax.swing.JFrame {
         String usuario = campo_usuario.getText();
         String contraseña = campo_contraseña.getText();
         String tipo_usuario = (String) tipo_user.getSelectedItem();
-        String jp = "jp";
-        if(usuario.equalsIgnoreCase(jp)){
-            Menu menu_biblioteca = new Menu(basedatos);
-            dispose();
+        
+        ResultSet listado = this.basedatos.ingresarSistema(contraseña, tipo_usuario, usuario);
+        if(listado != null){
+            try {
+                String rol_a = listado.getString("rol");
+                String bibliote = "Bibliotecario";
+                String clien = "Cliente";
+
+                if(rol_a.equalsIgnoreCase(bibliote)){
+                    Menu menu_bibliotecario = new Menu(basedatos);
+                    dispose();
+                } else if(rol_a.equalsIgnoreCase(clien)){
+                    MenuUsuarios menu_usuario = new MenuUsuarios(basedatos);
+                    dispose();
+                }
+            } catch (SQLException ex) {
+                System.out.println("No existes mai: "+ex.getMessage());
+            }
         } else{
-            MenuUsuarios menu_cliente = new MenuUsuarios(basedatos);
-            dispose();
+            System.out.println("Mano no hay nada en esa lista");
         }
+
         
 
     }//GEN-LAST:event_btn_ingresarActionPerformed
