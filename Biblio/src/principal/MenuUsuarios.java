@@ -32,7 +32,6 @@ public class MenuUsuarios extends javax.swing.JFrame {
         btn_solicitar_prestamo = new javax.swing.JButton();
         btn_ver_prestamos = new javax.swing.JButton();
         btn_editar_datos = new javax.swing.JButton();
-        btn_pagar_multas = new javax.swing.JButton();
         btn_salir = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         panel_vista1 = new javax.swing.JPanel();
@@ -95,16 +94,6 @@ public class MenuUsuarios extends javax.swing.JFrame {
         btn_editar_datos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_editar_datosActionPerformed(evt);
-            }
-        });
-
-        btn_pagar_multas.setBackground(new java.awt.Color(0, 0, 0));
-        btn_pagar_multas.setFont(new java.awt.Font("Microsoft PhagsPa", 0, 15)); // NOI18N
-        btn_pagar_multas.setForeground(new java.awt.Color(153, 153, 153));
-        btn_pagar_multas.setText("Pagar Multas");
-        btn_pagar_multas.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_pagar_multasActionPerformed(evt);
             }
         });
 
@@ -211,18 +200,16 @@ public class MenuUsuarios extends javax.swing.JFrame {
                         .addComponent(jLabel1))
                     .addGroup(usuarios_contenedorLayout.createSequentialGroup()
                         .addContainerGap()
-                        .addGroup(usuarios_contenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btn_libros_disponibles)
-                            .addComponent(btn_solicitar_prestamo, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btn_ver_prestamos, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btn_editar_datos, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btn_pagar_multas, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(usuarios_contenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(btn_solicitar_prestamo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btn_libros_disponibles, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btn_ver_prestamos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btn_editar_datos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(usuarios_contenedorLayout.createSequentialGroup()
                         .addGap(16, 16, 16)
                         .addComponent(btn_salir, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(panel_vista1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addGap(18, 18, 18)
+                .addComponent(panel_vista1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         usuarios_contenedorLayout.setVerticalGroup(
             usuarios_contenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -240,8 +227,6 @@ public class MenuUsuarios extends javax.swing.JFrame {
                         .addComponent(btn_ver_prestamos)
                         .addGap(28, 28, 28)
                         .addComponent(btn_editar_datos)
-                        .addGap(32, 32, 32)
-                        .addComponent(btn_pagar_multas)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btn_salir)
                         .addContainerGap())
@@ -252,7 +237,7 @@ public class MenuUsuarios extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(usuarios_contenedor, javax.swing.GroupLayout.DEFAULT_SIZE, 834, Short.MAX_VALUE)
+            .addComponent(usuarios_contenedor, javax.swing.GroupLayout.DEFAULT_SIZE, 899, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -279,16 +264,25 @@ public class MenuUsuarios extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_libros_disponiblesActionPerformed
 
     private void btn_ver_prestamosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ver_prestamosActionPerformed
-        // TODO add your handling code here:
+        panel_vista1.removeAll();
+        HistorialPrestamo contentTemporal = new HistorialPrestamo(basedatos);
+        contentTemporal.setSize(panel_vista1.getSize());
+        panel_vista1.add(contentTemporal);
+        
+        repaint();
+        revalidate();
+        
     }//GEN-LAST:event_btn_ver_prestamosActionPerformed
 
     private void btn_editar_datosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_editar_datosActionPerformed
-        // TODO add your handling code here:
+        panel_vista1.removeAll();
+        ActualizarDatosCliente contentTemporal = new ActualizarDatosCliente(basedatos);
+        contentTemporal.setSize(panel_vista1.getSize());
+        panel_vista1.add(contentTemporal);
+        
+        repaint();
+        revalidate();
     }//GEN-LAST:event_btn_editar_datosActionPerformed
-
-    private void btn_pagar_multasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_pagar_multasActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btn_pagar_multasActionPerformed
 
     private void btn_solicitar_prestamoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_solicitar_prestamoActionPerformed
         panel_vista1.removeAll();
@@ -305,7 +299,6 @@ public class MenuUsuarios extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_editar_datos;
     private javax.swing.JButton btn_libros_disponibles;
-    private javax.swing.JButton btn_pagar_multas;
     private javax.swing.JButton btn_salir;
     private javax.swing.JButton btn_solicitar_prestamo;
     private javax.swing.JButton btn_ver_prestamos;

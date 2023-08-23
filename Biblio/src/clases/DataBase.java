@@ -1,6 +1,9 @@
 package clases;
 
 import java.sql.*;
+import java.sql.ResultSet;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
@@ -61,7 +64,7 @@ public class DataBase {
                 String consulta = "INSERT INTO libros (titulo, autor, descripcion, genero, cantidad_disponible, valor_prestamo) VALUES ('"+titulo+"','"+autor+"','"+descripcion+"','"+genero+"','"+cantidad_disponible+"','"+valor_prestamo+"')";
                 int resultado = this.manipularDB.executeUpdate(consulta);
                 if (resultado==1) {
-                    respuesta = true;
+                    respuesta = true;        // TODO add your handling code here:ue;
                 }
             } catch (SQLException ex) {
                 System.out.println("Error al insertar: "+ex.getMessage());
@@ -124,6 +127,91 @@ public class DataBase {
             System.out.println("Error en SELECT: "+ex.getMessage());
         }
         return lista;
+    }
+    
+    //SOLICITAR PRESTAMO (CLIENTE)
+    public boolean solicitarPrestamo(String cedula_cliente, String nombre_libro, Date fecha_devolucion, int cantidad_llevada, String estado) {
+        boolean resultado_c = false;
+        try {
+            Statement statement = conexion.createStatement();
+
+            // BUSCAR CLIENTE
+            String cliente = "SELECT nombre FROM usuarios WHERE cedula = '" + cedula_cliente + "'";
+            ResultSet resultSetCliente = statement.executeQuery(cliente);
+            if (resultSetCliente.next()) {
+                String nombreCliente = resultSetCliente.getString("nombre");
+
+                String buscar_l = "SELECT titulo FROM libros WHERE titulo = '" + nombre_libro + "'";
+                ResultSet resultSetLibro = statement.executeQuery(buscar_l);
+                if (resultSetLibro.next()) {
+                    String nombreLibro = resultSetLibro.getString("titulo");
+                    
+                    //FECHA ACTUAL
+                    Date fecha_actual = new Date();
+                    java.sql.Date fechaActual = new java.sql.Date(fecha_actual.getTime());
+
+                    SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+                    String fechaFormateada = dateFormat.format(fecha_devolucion);
+
+                    String solicitar = "INSERT INTO prestamo (usuario, libro, fecha_prestamo , fecha_devolucion, cantidad_llevada, estado) VALUES ('" + nombreCliente + "','" + nombreLibro + "','"+fechaActual+"','" + fechaFormateada+ "','" + cantidad_llevada + "','" + estado + "')";
+                    int resultado = this.manipularDB.executeUpdate(solicitar);
+                    if (resultado == 1) {
+                        System.out.println("Se insertó");
+                        resultado_c = true;
+                        JOptionPane.showMessageDialog(null, "Solicitud enviada");
+                    }
+                } else {
+                    System.out.println("Libro no encontrado");
+                }
+            } else {
+                System.out.println("Cliente no encontrado");
+            }
+        } catch (SQLException ex) {
+            System.out.println("ERROR AL SOLICITAR" + ex.getMessage());
+        }
+        return resultado_c;
+    }
+    
+    
+    //BUSCAR CLIENTE
+    public ResultSet buscarCliente(String cedula){
+        ResultSet lista = null;
+        try {
+            String consulta = "SELECT * FROM usuarios WHERE cedula = '"+cedula+"'";
+            lista = this.manipularDB.executeQuery(consulta);
+            lista.next();
+            if (lista.getRow()==1) {
+                return lista;
+            }else{
+                return null;
+            }
+            
+        } catch (SQLException ex) {
+            System.out.println("Cedula no encontrada"+ex.getMessage());
+        }
+        return lista;
+    }
+
+    public boolean updateClientes(String cedula, String nombre, String apellido, String telefono, String direccion){
+        boolean resultado = false;
+        try {
+            Statement statement = conexion.createStatement();
+            
+            String buscar_c = "SELECT id_usuario FROM usuarios WHERE cedula = '"+cedula+"' ";
+            ResultSet resultSetBuscarC = statement.executeQuery(buscar_c);
+            if(resultSetBuscarC.next()){
+                String id_user = resultSetBuscarC.getString("id_usuario");
+                String update = "UPDATE usuarios SET cedula = '"+cedula+"', nombre = '"+nombre+"', apellido = '"+apellido+"', telefono = '"+telefono+"' , direccion = '"+direccion+"' WHERE id_usuario = '"+id_user+"' ";
+                int respuesta = this.manipularDB.executeUpdate(update);
+
+                if(respuesta == 1){
+                    resultado = true;
+                }
+            }
+        } catch (SQLException ex) {
+            System.out.println("Papi no se pudo actualizar"+ex.getMessage());
+        }
+        return resultado;
     }
     
 

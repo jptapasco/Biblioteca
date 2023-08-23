@@ -78,7 +78,6 @@ public class RegistrarUsuario extends javax.swing.JPanel {
         btn_registrar_user.setBackground(new java.awt.Color(102, 204, 255));
         btn_registrar_user.setForeground(new java.awt.Color(0, 0, 0));
         btn_registrar_user.setText("REGISTRAR");
-        btn_registrar_user.setOpaque(true);
         btn_registrar_user.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_registrar_userActionPerformed(evt);
@@ -98,12 +97,12 @@ public class RegistrarUsuario extends javax.swing.JPanel {
         registrar_user_contenedorLayout.setHorizontalGroup(
             registrar_user_contenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(registrar_user_contenedorLayout.createSequentialGroup()
-                .addContainerGap(200, Short.MAX_VALUE)
+                .addContainerGap(214, Short.MAX_VALUE)
                 .addGroup(registrar_user_contenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, registrar_user_contenedorLayout.createSequentialGroup()
                         .addComponent(etq_tipo_user)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(rol_select, 0, 0, Short.MAX_VALUE))
+                        .addComponent(rol_select, 0, 148, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, registrar_user_contenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(registrar_user_contenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(etq_nombre)
@@ -119,7 +118,7 @@ public class RegistrarUsuario extends javax.swing.JPanel {
                         .addGroup(registrar_user_contenedorLayout.createSequentialGroup()
                             .addGap(77, 77, 77)
                             .addComponent(btn_registrar_user))))
-                .addContainerGap(200, Short.MAX_VALUE))
+                .addContainerGap(214, Short.MAX_VALUE))
         );
         registrar_user_contenedorLayout.setVerticalGroup(
             registrar_user_contenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -150,7 +149,7 @@ public class RegistrarUsuario extends javax.swing.JPanel {
                 .addComponent(campo_direccion, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(27, 27, 27)
                 .addComponent(btn_registrar_user, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(44, Short.MAX_VALUE))
+                .addContainerGap(30, Short.MAX_VALUE))
         );
 
         etq_titulo.setBackground(new java.awt.Color(204, 204, 204));
@@ -166,10 +165,10 @@ public class RegistrarUsuario extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(registrar_user_contenedor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(etq_titulo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(etq_titulo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(registrar_user_contenedor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
