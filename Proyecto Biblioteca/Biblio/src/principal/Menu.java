@@ -110,7 +110,7 @@ public class Menu extends javax.swing.JFrame {
             }
         });
 
-        btn_prestamo.setBackground(new java.awt.Color(0, 204, 204));
+        btn_prestamo.setBackground(new java.awt.Color(102, 204, 255));
         btn_prestamo.setForeground(new java.awt.Color(0, 0, 0));
         btn_prestamo.setText("Solicitud Prestamo");
         btn_prestamo.addActionListener(new java.awt.event.ActionListener() {
@@ -133,7 +133,7 @@ public class Menu extends javax.swing.JFrame {
                     .addComponent(btn_registrar_user, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btn_lista_clientes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btn_salir)
-                    .addComponent(btn_prestamo, javax.swing.GroupLayout.DEFAULT_SIZE, 144, Short.MAX_VALUE))
+                    .addComponent(btn_prestamo, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
                 .addComponent(panel_contenedor2, javax.swing.GroupLayout.DEFAULT_SIZE, 712, Short.MAX_VALUE)
                 .addContainerGap())
@@ -164,7 +164,7 @@ public class Menu extends javax.swing.JFrame {
                         .addComponent(btn_salir)
                         .addGap(16, 16, 16))
                     .addGroup(panel_contenedorLayout.createSequentialGroup()
-                        .addComponent(panel_contenedor2, javax.swing.GroupLayout.DEFAULT_SIZE, 536, Short.MAX_VALUE)
+                        .addComponent(panel_contenedor2, javax.swing.GroupLayout.DEFAULT_SIZE, 574, Short.MAX_VALUE)
                         .addContainerGap())))
         );
 

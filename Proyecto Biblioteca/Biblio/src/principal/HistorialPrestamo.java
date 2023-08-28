@@ -152,6 +152,8 @@ public class HistorialPrestamo extends javax.swing.JPanel {
             } catch (SQLException ex) {
                 System.out.println("Nada en el historial"+ex.getMessage());
             }
+        }else{
+            System.out.println("error ---: " );
         }
     }//GEN-LAST:event_btn_buscarActionPerformed
 

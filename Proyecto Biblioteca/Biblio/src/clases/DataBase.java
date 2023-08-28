@@ -5,11 +5,7 @@ import java.sql.ResultSet;
 import java.sql.Connection;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JOptionPane;
-import principal.Menu;
-import principal.MenuUsuarios;
 
 public class DataBase {
     Connection conexion;
@@ -21,7 +17,7 @@ public class DataBase {
         String puerto = "3306";
         String user_name = "root";
         String password = "";
-        String database_name = "biblioteca";
+        String database_name = "biblio";
         
         String url = "jdbc:mysql://"+hostname+":"+puerto+"/"+database_name;
             
@@ -305,13 +301,13 @@ public class DataBase {
     }
     
     public ResultSet BuscarClientePrestamos(String nombre){
-        ResultSet lista= null;
-        
+        ResultSet lista = null;
+
         try {            
             String buscar_historial = "SELECT usuario, nombre_libro, fecha_devolucion FROM devolucion WHERE usuario = '"+nombre+"'";
             lista = this.manipularDB.executeQuery(buscar_historial);
             lista.next();
-            if (lista.getRow()>0) {
+            if (lista.getRow() == 1) {
                 return lista;
             } else{
                 return null;
@@ -320,6 +316,22 @@ public class DataBase {
             System.out.println("No hay historial");
         }
         return lista;
+    }
+    
+    public boolean aceptarPrestamo(String usuario, String libro, String fecha){
+        boolean respuesta = false;
+        
+        try {
+            String consulta = "INSERT INTO devolucion (usuario, nombre_libro, fecha_devolucion) VALUES ('"+usuario+"','"+libro+"','"+fecha+"')";
+            int resultado = this.manipularDB.executeUpdate(consulta);
+            if (resultado==1) {
+                respuesta = true;
+            }
+        } catch (SQLException ex) {
+            System.out.println("Error al insertar: "+ex.getMessage());
+        }
+        
+        return respuesta;
     }
 
     private void dispose() {

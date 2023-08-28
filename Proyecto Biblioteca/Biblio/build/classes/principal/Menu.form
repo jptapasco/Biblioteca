@@ -61,7 +61,7 @@
                       <Component id="btn_registrar_user" max="32767" attributes="0"/>
                       <Component id="btn_lista_clientes" alignment="0" max="32767" attributes="0"/>
                       <Component id="btn_salir" min="-2" max="-2" attributes="0"/>
-                      <Component id="btn_prestamo" alignment="0" pref="144" max="32767" attributes="0"/>
+                      <Component id="btn_prestamo" alignment="0" pref="0" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="panel_contenedor2" pref="712" max="32767" attributes="0"/>
@@ -96,7 +96,7 @@
                           <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" attributes="0">
-                          <Component id="panel_contenedor2" pref="536" max="32767" attributes="0"/>
+                          <Component id="panel_contenedor2" pref="574" max="32767" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
                   </Group>
@@ -231,7 +231,7 @@
         <Component class="javax.swing.JButton" name="btn_prestamo">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="cc" green="cc" red="0" type="rgb"/>
+              <Color blue="ff" green="cc" red="66" type="rgb"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="0" green="0" red="0" type="rgb"/>

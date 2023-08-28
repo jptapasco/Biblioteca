@@ -4,7 +4,6 @@ import clases.DataBase;
 import clases.RenderTable;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import javax.swing.JButton;
 import javax.swing.table.DefaultTableModel;
 
 public class PrestamosSolicitados extends javax.swing.JPanel {
@@ -19,7 +18,7 @@ public class PrestamosSolicitados extends javax.swing.JPanel {
         cargarPrestamos();
     }
     
-     public void initModeloComponents(){
+    public void initModeloComponents(){
         modelo = (DefaultTableModel) tabla_prestamos.getModel();
     }
     
@@ -34,14 +33,12 @@ public class PrestamosSolicitados extends javax.swing.JPanel {
                     String libro = listado.getString("libro");
                     String fecha = listado.getString("fecha_prestamo");
                     String cantidad = listado.getString("cantidad_llevada");
-                    JButton boton = new JButton();
-                    boton.setText("prestar");
                     Object[] temp = new Object[]{id, usuario, libro, fecha, cantidad};
                     modelo.addRow(temp);
 
-                    tabla_prestamos.setModel(modelo);
                     tabla_prestamos.getColumnModel().getColumn(5).setCellRenderer(new RenderTable());
-                    tabla_prestamos.getColumnModel().getColumn(5).setCellEditor(new EditarBoton());
+                    tabla_prestamos.getColumnModel().getColumn(5).setCellEditor(new EditarBoton(basedatos));
+                    //System.out.println("Botón clicado en fila: " + tabla_prestamos.getRowSelectionAllowed());
                 }while( listado.next() );
             } catch (SQLException ex) {
                 System.out.println("Error al extraer datos: "+ex.getMessage());
@@ -78,12 +75,7 @@ public class PrestamosSolicitados extends javax.swing.JPanel {
 
         tabla_prestamos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null}
+
             },
             new String [] {
                 "id prestamo", "usuario", "libro", "fecha prestamo", "cantidad", "accion"
@@ -119,14 +111,14 @@ public class PrestamosSolicitados extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(panel_contenedor3, javax.swing.GroupLayout.DEFAULT_SIZE, 686, Short.MAX_VALUE)
+                .addComponent(panel_contenedor3, javax.swing.GroupLayout.DEFAULT_SIZE, 603, Short.MAX_VALUE)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(panel_contenedor3, javax.swing.GroupLayout.DEFAULT_SIZE, 489, Short.MAX_VALUE)
+                .addComponent(panel_contenedor3, javax.swing.GroupLayout.DEFAULT_SIZE, 501, Short.MAX_VALUE)
                 .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
